@@ -22,6 +22,9 @@
 
       function getResults (query) {
         fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
+        //api.openweathermap.org/data/2.5/weather?q={city name},{state},{country code}&appid={your api key}
+
+
           .then(weather => {
             return weather.json();
           }).then(displayResults);
