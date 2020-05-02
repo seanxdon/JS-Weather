@@ -3,16 +3,23 @@
         key: "42049ce9318e18cf15c1e4ee0ce4c3dc",
         base: "https://api.openweathermap.org/data/2.5/"
       }
-      
+
+      const searchbtn = document.querySelector('#search-btn')
       const searchbox = document.querySelector('.search-box');
       searchbox.addEventListener('keypress', setQuery);
-      
+      searchbtn.addEventListener('click', setQueryClick)
+
       function setQuery(evt) {
         if (evt.keyCode == 13) {
           getResults(searchbox.value);
         }
       }
       
+      // ADD BUTTON CLICK EVENT
+      function setQueryClick(){
+        getResults(searchbox.value);
+      }
+
       function getResults (query) {
         fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
           .then(weather => {
@@ -51,8 +58,7 @@
       }
 })();
 
-
-// ADD BUTTON CLICK EVENT 
+ 
 //PRE LOAD Huntington Beach, CA 
 //Change bg on type of weather
 //Add Icon on type of weather 

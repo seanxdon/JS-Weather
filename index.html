@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather app</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="style.css"/>
+  <title>Weather app</title>
 </head>
 <body>
   <div class="app-wrap">
     <header>
       <input type="text" autocomplete="off" class="search-box" placeholder="Where will you be today?"/>
-      <button onclick="setQuery(evt)">Click me</button>
+      <button id="search-btn"><i class="fas fa-arrow-right"></i></i></button>
     </header>
     <main>
       <section class="location">
