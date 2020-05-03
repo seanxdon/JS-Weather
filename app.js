@@ -22,9 +22,6 @@
 
       function getResults (query) {
         fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
-        //api.openweathermap.org/data/2.5/weather?q={city name},{state},{country code}&appid={your api key}
-
-
           .then(weather => {
             return weather.json();
           }).then(displayResults);
@@ -41,8 +38,10 @@
         let temp = document.querySelector('.current .temp');
         temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F</span>`;
       
+        let type = document.querySelector('.type')
+        type.innerHTML = `<img src='http://openweathermap.org/img/wn/${weather.icon}@2x.png'/>` //weather icon 
         let weather_el = document.querySelector('.current .weather');
-        weather_el.innerText = weather.weather[0].main;
+        weather_el.innerText = weather.weather[0].main; // type of weather 
       
         let hilow = document.querySelector('.hi-low');
         hilow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F`;
@@ -61,8 +60,7 @@
       }
 })();
 
- 
-//PRE LOAD Huntington Beach, CA 
+
 //Change bg on type of weather
 //Add Icon on type of weather 
-//Change font s
+//PRE LOAD Huntington Beach, CA 

@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+
   }
 
   button {
@@ -26,7 +28,7 @@
 
   body {
     font-family: 'montserrat', sans-serif;
-    background-image: url('sunny.jpg');
+    background-image: url('./imgs/sunny.jpg');
     background-size: cover;
     background-position: top center;
   }
