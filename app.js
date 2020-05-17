@@ -15,7 +15,6 @@
         }
       }
       
-      // ADD BUTTON CLICK EVENT
       function setQueryClick(){
         getResults(searchbox.value);
       }
@@ -33,12 +32,6 @@
             return weather.json();
           }).then(displayResults);
       }
-    //   Change BG on weather type
-    //   function getType(weatherType) {
-    //     if (weatherType === 'Clear') {
-    //         console.log(rec)
-    //     }
-    //   }
 
     function onLoadResults (weather) {
         let city = document.querySelector('.location .city');
@@ -52,11 +45,11 @@
         temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F</span>`;
       
         let icon = document.querySelector('.current .icon');
-        icon.innerHTML = `<img class ='icon'src='http://openweathermap.org/img/w/10d.png'/>`;//weather icon 
+        icon.innerHTML = `<img class ='icon'src='http://openweathermap.org/img/w/10d.png'/>`;
 
         let weather_el = document.querySelector('.current .weather');
         let weatherType = weather.weather[0].main;
-        weather_el.innerText = weatherType // type of weather 
+        weather_el.innerText = weatherType
 
 
         
@@ -87,7 +80,7 @@
       
         let weather_el = document.querySelector('.current .weather');
         let weatherType = weather.weather[0].main;
-        weather_el.innerText = weatherType // type of weather 
+        weather_el.innerText = weatherType 
 
         let hilow = document.querySelector('.hi-low');
         hilow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F`;
@@ -104,8 +97,3 @@
         return `${day} ${date} ${month} ${year}`;
       }
 })();
-
-
-//Change bg on type of weather
-//Add Icon on type of weather 
-//PRE LOAD Huntington Beach, CA 
